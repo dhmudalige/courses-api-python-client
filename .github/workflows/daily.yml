@@ -42,10 +42,6 @@ jobs:
           python3 test_default_api.py
           cd ../
 
-      - name: "Run Code Examples"
-        run: |
-          python3 my_course_code_example.py
-
 
 
       - name: Commit and push into the main branch
