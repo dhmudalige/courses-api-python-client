@@ -17,16 +17,21 @@ jobs:
         with:
           ref: main
 
-      - name: Set up Python 3.7
+      - name: Setup Python 3.7
         uses: actions/setup-python@v2
         with:
           python-version: 3.7
+          
 
+      - name: Setup Swagger Client
+        run: |
+          python setup.py install --user
+          
+          
       - name: Install Python Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests
-          pip install swagger_client
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
 
